@@ -28,29 +28,9 @@ Sure thing, let's do this. First, install it:
 npm install transmogrifier
 ```
 
-Then define the data structure you want. Maybe you want some kind of graph? Sure, no problem:
+(Note: I haven't actually published this to npm yet. But maybe I will.)
 
-```typescript
-import { z } from "zod";
-
-const Entity = z.object({
-  name: z.string(),
-  kind: z.string(),
-});
-
-const Relationship = z.object({
-  source: z.string(),
-  target: z.string(),
-  kind: z.string(),
-});
-
-const Graph = z.object({
-  entities: z.array(Entity),
-  relationships: z.array(Relationship),
-});
-```
-
-Grab some data:
+Find some content to transmogrify:
 
 ```typescript
 const inputText = `
@@ -61,54 +41,48 @@ in stores and online starting on Friday, October 23rd.
 `;
 ```
 
-And turn the dial:
+Then define the schema your heart desires:
+
+```typescript
+import { z } from "zod";
+
+const Schema = z.object({
+  companies: z.array(z.string()),
+  products: z.array(z.string()),
+  people: z.array(z.string()),
+  dates: z.array(z.string()),
+  events: z.array(z.string()),
+});
+```
+
+Now turn the dial:
 
 ```typescript
 import Transmogrifier from "transmogrifier";
 const transmogrifier = new Transmogrifier(MY_OPEN_AI_API_KEY);
-const result = await transmogrifier.transmogrify(inputText, Graph);
+const result = await transmogrifier.transmogrify(inputText, Schema);
 console.log(result);
 ```
 
 Zap! Just like magic, you'll get something like this:
 
-```typescript
+```json
 {
-  entities: [
-    {
-      name: "Apple Inc.",
-      kind: "company",
-    },
-    {
-      name: "iPhone 12",
-      kind: "product",
-    },
-    {
-      name: "Tim Cook",
-      kind: "person",
-    },
-    {
-      name: "2020-10-23",
-      kind: "date",
-    },
+  "companies": [
+    "Apple Inc"
   ],
-  relationships: [
-    {
-      source: "Apple Inc.",
-      target: "iPhone 12",
-      kind: "released",
-    },
-    {
-      source: "Tim Cook",
-      target: "iPhone 12",
-      kind: "announced",
-    },
-    {
-      source: "Apple Inc.",
-      target: "Tim Cook",
-      kind: "CEO",
-    },
+  "products": [
+    "iPhone 12"
   ],
+  "people": [
+    "Tim Cook"
+  ],
+  "dates": [
+    "Friday, October 23rd"
+  ],
+  "events": [
+    "release of the new iPhone 12"
+  ]
 }
 ```
 

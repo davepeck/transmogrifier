@@ -57,8 +57,11 @@ ${text}
     const maybeOutput = response.data.choices[0].text;
     if (!maybeOutput) throw new Error("No output from OpenAI");
     try {
+      // we asked for JSON; see if we can parse it
       return schema.parse(JSON.parse(maybeOutput));
     } catch (e) {
+      // sometimes GPT-3 returns a Javascript literal object instead of JSON
+      // so do some awful eval() magic to try to parse it
       try {
         const iife = `(function() { const data = ${maybeOutput};\nreturn data; })()`;
         return schema.parse(eval(iife));
