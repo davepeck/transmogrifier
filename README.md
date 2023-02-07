@@ -79,3 +79,9 @@ Zap! Just like ~magic~science, you'll get something like this:
 ```
 
 I mean, maybe you will! Try it and find out.
+
+...
+
+...
+
+Note: I threw this together in like 30 minutes. I haven't packaged it, published it to `npm`, polished it, or anything else. It's basically a single interesting source file (`src/index.ts`) and nothing else.
