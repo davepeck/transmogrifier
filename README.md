@@ -41,7 +41,7 @@ in stores and online starting on Friday, October 23rd.
 `;
 ```
 
-Then define the schema your heart desires:
+Then define whatever schema your heart desires:
 
 ```typescript
 import { z } from "zod";
