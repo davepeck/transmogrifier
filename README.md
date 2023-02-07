@@ -64,7 +64,7 @@ const result = await transmogrifier.transmogrify(inputText, Schema);
 console.log(result);
 ```
 
-Zap! Just like magic, you'll get something like this:
+Zap! Just like ~magic~science, you'll get something like this:
 
 ```json
 {
