@@ -1,0 +1,38 @@
+{
+  "name": "transmogrifier",
+  "version": "0.0.1",
+  "description": "Unstructured data goes in, structured data comes out. Sometimes comedically.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davepeck/transmogrifier.git"
+  },
+  "keywords": [
+    "OpenAI",
+    "GPT-3",
+    "ChatGPT",
+    "InfiniteAIArray"
+  ],
+  "author": "Dave Peck <davepeck@davepeck.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davepeck/transmogrifier/issues"
+  },
+  "homepage": "https://github.com/davepeck/transmogrifier#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "openai": "^3.1.0",
+    "zod": "^3.20.2",
+    "zod-to-ts": "^1.1.2"
+  }
+}
