@@ -20,7 +20,25 @@ technology. Cook stated that the iPhone 12 will be available for purchase
 in stores and online starting on Friday, October 23rd.
 `;
 
-transmogrifier
-  .transmogrify(inputText, Schema)
-  .then((result) => console.log(JSON.stringify(result, null, 2)))
-  .catch((err) => console.error(err));
+const otherInputText = `
+CEO Sundar Pichai told employees Monday the company is going to need all hands 
+on deck to test Bard, its new ChatGPT rival. He also said Google will soon be 
+enlisting help from partners to test an application programming interface, 
+or API, that would let others access the same underlying technology.
+`;
+
+const run = async (text: string) => {
+  try {
+    const result = await transmogrifier.transmogrify(text, Schema);
+    console.log(JSON.stringify(result, null, 2));
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+const runAll = async () => {
+  await run(inputText);
+  await run(otherInputText);
+};
+
+runAll().then(() => console.log("Done!"));

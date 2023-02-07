@@ -22,15 +22,7 @@ That's... it.
 
 ## Show me an example!
 
-Sure thing, let's do this. First, install it:
-
-```
-npm install transmogrifier
-```
-
-(Note: I haven't actually published this to npm yet. But maybe I will.)
-
-Find some content to transmogrify:
+Sure thing, let's do this. Find some content to transmogrify:
 
 ```typescript
 const inputText = `
