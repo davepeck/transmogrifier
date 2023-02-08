@@ -80,8 +80,8 @@ Zap! Just like ~magic~science, you'll get something like this:
 
 I mean, maybe you will! Try it and find out.
 
-...
+### Colophon
 
-...
+One nice thing about the `transmogrify()` method is that it has a nice type contract: either you get back a thing that is _known_ at runtime to match your target schema (and, thanks to the magic of TypeScript and Zod, the equivalent compile-time type too), or an exception is raised. If you get data back, it's the right shape.
 
-Note: I threw this together in like 30 minutes. I haven't packaged it, published it to `npm`, polished it, or anything else. It's basically (`src/index.ts`) and nothing else.
+I threw this together in like 30 minutes. I haven't packaged it, published it to `npm`, polished it, or anything else. It's basically (`src/index.ts`) and nothing else.
