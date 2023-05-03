@@ -80,6 +80,17 @@ Zap! Just like ~magic~science, you'll get something like this:
 
 I mean, maybe you will! Try it and find out.
 
+You can use all the niceties of Zod and Typescript:
+
+```
+// Zod can infer a static type
+type SchemaType = z.infer<typeof Schema>;
+
+// When calling transmogrify(...) either get data matching the expected type, or an exception
+const result: SchemaType = await transmogrifier.transmogrify(inputText, Schema);
+```
+
+
 ### Colophon
 
 One nice thing about the `transmogrify()` method is that it has a nice type contract: either you get back a thing that is _known_ at runtime to match your target schema (and, thanks to the magic of TypeScript and Zod, the equivalent compile-time type too), or an exception is raised. If you get data back, it's the right shape.
