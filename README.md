@@ -86,7 +86,7 @@ You can use all the niceties of Zod and Typescript:
 // Zod can infer a static type
 type SchemaType = z.infer<typeof Schema>;
 
-// When calling transmogrify(...) either get data matching the expected type, or an exception
+// When calling transmogrify(...) you'll either get data matching the expected type, or an exception
 const result: SchemaType = await transmogrifier.transmogrify(inputText, Schema);
 ```
 
