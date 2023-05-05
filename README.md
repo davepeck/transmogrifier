@@ -23,7 +23,9 @@ const inputText = `
 On Tuesday, the CEO of Apple Inc., Tim Cook, announced the release of the 
 new iPhone 12. The device features a sleek design and improved camera 
 technology. Cook stated that the iPhone 12 will be available for purchase 
-in stores and online starting on Friday, October 23rd.
+in stores and online starting on Friday, October 23rd. Google spokesperson
+Alberto Chase reminds customers that Pixel phones have long had superior
+photographic hardware and software.
 `;
 ```
 
@@ -55,13 +57,13 @@ Zap! Just like ~magic~science, you'll get something like this:
 ```json
 {
   "companies": [
-    "Apple Inc"
+    "Apple Inc", "Google"
   ],
   "products": [
-    "iPhone 12"
+    "iPhone 12", "Pixel"
   ],
   "people": [
-    "Tim Cook"
+    "Tim Cook", "Alberto Chase"
   ],
   "dates": [
     "Friday, October 23rd"
@@ -71,8 +73,6 @@ Zap! Just like ~magic~science, you'll get something like this:
   ]
 }
 ```
-
-I mean, maybe you will! Try it and find out.
 
 You can use all the niceties of Zod and Typescript:
 
