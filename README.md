@@ -6,16 +6,10 @@ Unstructured data goes in, structured data comes out. Sometimes comedically.
 
 ## What's this?
 
-At the end of 2022, [Ian Bicking](https://ianbicking.org) shipped the hilariously weird [Infinite AI Array library](https://ianbicking.org/blog/2023/01/infinite-ai-array.html). Ian:
-
-> Some ideas are dumb enough you just have to try them
-
-Yup! And some dumb ideas are so great that you have to build more dumb things along the same lines.
-
 `transmogrifier` is a TypeScript library that lets you:
 
-1. Define a data structure
-2. Call `transmogrify("some unstructured content", myDesiredDataStructure)`
+1. Define a schema
+2. Call `transmogrify("some unstructured content", myDesiredSchema)`
 3. Get data back
 
 That's... it.
@@ -82,7 +76,7 @@ I mean, maybe you will! Try it and find out.
 
 You can use all the niceties of Zod and Typescript:
 
-```
+```typescript
 // Zod can infer a static type
 type SchemaType = z.infer<typeof Schema>;
 
